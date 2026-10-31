@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Planner | Stay on track</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="brand"><span class="brand-mark">✓</span><span>STUDY<span class="brand-light">PLANNER</span></span></div>
+      <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+      <h1>Make time for<br><span>what matters.</span></h1>
+      <p class="intro">Organise your assignments, keep track of your progress, and take your studies one task at a time.</p>
+    </header>
+
+    <section class="panel form-panel" aria-labelledby="add-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow">GET STARTED</p><h2 id="add-heading">Add a study task</h2></div>
+        <span class="plus">＋</span>
+      </div>
+      <form id="task-form">
+        <label for="task-title">Task title</label>
+        <input id="task-title" type="text" placeholder="e.g. Read chapter three" maxlength="100" required>
+        <label for="task-subject">Subject / course</label>
+        <input id="task-subject" type="text" placeholder="e.g. Introduction to Computing" maxlength="60">
+        <button type="submit">Add task <span>→</span></button>
+        <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="tasks-section">
+      <div class="section-heading list-heading">
+        <div><p class="eyebrow">YOUR WORKLOAD</p><h2>My tasks <span id="task-count" class="count">0</span></h2></div>
+        <div class="filters" aria-label="Filter tasks">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="active" type="button">Pending</button>
+          <button class="filter" data-filter="completed" type="button">Done</button>
+        </div>
+      </div>
+      <div class="progress-wrap"><div class="progress-label"><span>Overall progress</span><strong id="progress-text">0%</strong></div><div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div></div>
+      <ul id="task-list" class="task-list"></ul>
+      <div id="empty-state" class="empty-state"><div class="empty-icon">✦</div><h3>No tasks yet</h3><p>Add your first study task above and it will appear here.</p></div>
+    </section>
+    <footer>Small steps. Consistent progress. <span>✦</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
